@@ -1,1 +1,6 @@
-<p><%= task.name %></p>
+<%= form_for task do |f| %>
+	<%= f.check_box :complete %>
+	<%= f.submit "Update" %>
+	<%= f.label :complete, task.name %> | 
+	<%= link_to "Delete", task, method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>

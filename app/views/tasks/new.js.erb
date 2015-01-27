@@ -1,0 +1,4 @@
+//First reference to the link id i.e. #new_link and call the hide function on it
+//insert the form code directly after this new link i.e. render out the form partial
+//since i'm inserting erb html directly into javascript, I need to escape it with 'j' method call in ruby 
+$('#new_link').hide().after('<%= j render("form")  %>')
