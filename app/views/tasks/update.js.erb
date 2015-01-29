@@ -1,0 +1,6 @@
+<% if @task.complete? %>
+	//grab the task element and append it to complete_tasks div
+	$('#edit_task_<%= @task.id %>').appendTo('#complete_tasks');
+<% else %>
+	$('#edit_task_<%= @task.id %>').appendTo('#incomplete_tasks');
+<% end %>

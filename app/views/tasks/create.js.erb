@@ -2,3 +2,10 @@
 $('#new_task').remove();
 //show the new link again
 $('#new_link').show();
+//finally insert the new task that was created into the div called incomplete_tasks
+//it will render out the @task instance that we get from controller
+$('#incomplete_tasks').append('<%= j render(@task) %>');
+
+//for not displaying update button and form submission on check functionality to work
+//submitOnCheck() function is from tasks.js 
+$('#edit_task_<%= @task.id %>').submitOnCheck();

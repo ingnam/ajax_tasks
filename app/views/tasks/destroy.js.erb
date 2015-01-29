@@ -1,0 +1,5 @@
+//here we need to remove the task so we need to reference it somehow
+//if we look back at task partial i.e. _task.html.erb, the task is inside the form for editing the task
+//we will use an form id that rails automatically assigns to it called edit task 
+//and actual id of the task i.e. @task.id. we get @task from destroy action of controller
+$('#edit_task_<%= @task.id %>').remove();
