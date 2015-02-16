@@ -1,2 +1,9 @@
 $('#articles').append('<%= j render(@articles) %>')
-$('.pagination').replaceWith('<%= j will_paginate(@articles) %>')
+//instead of always replacing the pagination, lets only replace it if we have page on our @articles result
+//if we do, replace the pagination and if we don't completely remove it
+<% if @articles.next_page %>
+	$('.pagination').replaceWith('<%= j will_paginate(@articles) %>');
+<% else %>
+	$('.pagination').remove();
+<% end %>
+<% sleep 1 %>
